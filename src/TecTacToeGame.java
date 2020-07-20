@@ -1,9 +1,7 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TecTacToeGame {
     private static int turns = 0;
-    private static final int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2};
 
     private static final int human = 0;
     private static final String humanChar = "A";
@@ -58,11 +56,11 @@ public class TecTacToeGame {
         }
 
         boolean theGameEnds = checkIfTheGameEnds(human);
-        if (theGameEnds && turns <=9) {
+        if (theGameEnds && turns <= 9) {
             // congrats
             done();
             System.out.println("Player 1 Wins");
-        }else if (!theGameEnds && turns == 9){
+        } else if (!theGameEnds && turns == 9) {
             done();
             System.out.println("Oooooooooops! It's a Draw");
             System.exit(1);
@@ -91,11 +89,11 @@ public class TecTacToeGame {
         }
 
         boolean theGameEnds = checkIfTheGameEnds(computer);
-        if (theGameEnds && turns <=9) {
+        if (theGameEnds && turns <= 9) {
             // congrats
             done();
             System.out.println("Player 2 Wins");
-        }else if (!theGameEnds && turns == 9){
+        } else if (!theGameEnds && turns == 9) {
             done();
             System.out.println("Oooooooooops! It's a Draw");
             System.exit(1);
@@ -106,13 +104,9 @@ public class TecTacToeGame {
 
     private static boolean checkIfSpotIsFree(int move) {
         boolean isFree;
-        if (arr[move].equals(humanChar) || arr[move].equals(computerChar)) {
-            // not free
-            isFree = false;
-        } else {
-            // free
-            isFree = true;
-        }
+        // not free
+        // free
+        isFree = !arr[move].equals(humanChar) && !arr[move].equals(computerChar);
         return isFree;
     }
 
@@ -128,7 +122,7 @@ public class TecTacToeGame {
                         if (winningState[j] == humanMove) { // 0==0? & 0 == 1 & 0 ==2
                             counter++;
                         }
-                        if (counter == 3){
+                        if (counter == 3) {
                             isThree = true;
                         }
                     }
@@ -142,7 +136,7 @@ public class TecTacToeGame {
                         if (winningState[j] == computerMove) {
                             counter++;
                         }
-                        if (counter == 3){
+                        if (counter == 3) {
                             isThree = true;
                         }
                     }

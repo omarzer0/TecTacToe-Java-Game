@@ -4,12 +4,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-
-        String word = "ruruturturtutu";
-        String text = "The cat is on the table";
-        Boolean found;
-
-        found = text.contains(word);
-        System.out.println(found);
+        int z = 10100011;
+        int x = 0;
+        System.out.println(x|z);
     }
 }
